@@ -1,0 +1,60 @@
+# Python
+.venv/
+env/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environment
+.env
+.env.local
+
+# Data files (ignore contents but keep folder structure)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/embeddings/*
+!data/embeddings/.gitkeep
+
+# Keep the splits folder structure
+!data/processed/splits/
+data/processed/splits/*
+!data/processed/splits/.gitkeep
+
+# Reports
+reports/*
+!reports/.gitkeep
+
+# Models (optional - upload if small)
+# models/*.pt
+
+# OS / Editor
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebooks
+
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/

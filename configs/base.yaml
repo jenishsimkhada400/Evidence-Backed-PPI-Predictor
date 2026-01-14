@@ -1,0 +1,40 @@
+
+project:
+  name: Evidence-Backed-PPI-Predictor  # Match GitHub repo name
+  seed: 42
+
+paths:
+  data_raw: data/raw
+  data_processed: data/processed
+  embeddings: data/embeddings
+  reports: reports
+
+dataset:
+  primary_source: biogrid
+  organism_taxid: 9606  # Human only
+  biogrid_version: 4.4.229  # Updated version
+
+sampling:
+  neg_ratio: 5
+  neg_types: ["random"] 
+
+split:
+  strategy: protein_disjoint
+  val_frac: 0.10
+  test_frac: 0.15
+
+model:
+  type: two_tower
+  embed_dim: 320  # esm2_t6_8M_UR50D
+  hidden_dim: 256
+  dropout: 0.3
+
+train:
+  batch_size: 256
+  lr: 0.001
+  epochs: 10
+  weight_decay: 0.00001
+
+rag:
+  method: direct_lookup
+  corpus_path: data/processed/evidence_corpus.jsonl 
